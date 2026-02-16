@@ -36,3 +36,11 @@ recuperarFloat = function(idComponente){
  }
 
 
+mostrarSeccion = function(seccion){
+
+    document.getElementById("cuentas").style.display = "none";
+    document.getElementById("transacciones").style.display = "none";
+    document.getElementById("movimientos").style.display = "none";
+
+    document.getElementById(seccion).style.display = "block";
+}
