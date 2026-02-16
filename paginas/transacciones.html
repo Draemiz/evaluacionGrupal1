@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../utilitarios.js"></script>
+    <script src="../banco.js"></script>
+    <title>transacciones</title>
+</head>
+
+<body>
+    <h2>Transacciones</h2>
+
+    <input type="text" id="buscarCuenta" placeholder="Número Cuenta">
+    <button onclick="buscarCuenta()">Buscar</button>
+
+    <br><br>
+
+    <input type="number" id="monto" placeholder="Monto">
+    <button onclick="depositar()" id="btnDepositar" disabled>Depositar</button>
+    <button onclick="retirar()" id="btnRetirar" disabled>Retirar</button>
+
+    <br><br>
+
+    <div id="mensaje"></div>
+
+    <br>
+    <a href="../index.html">Volver</a>
+</body>
+
+</html>
