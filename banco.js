@@ -49,3 +49,57 @@ mostrarCuentas = function(){
         `;
     }
 }
+
+//======= TRANSACCIONES =======
+
+buscarCuenta = function(){
+
+    let numero = recuperarTexto("buscarCuenta");
+
+    cuentaActual = cuentas.find(c => c.numeroCuenta === numero);
+
+    if(!cuentaActual){
+        mostrarTexto("mensaje", "CUENTA INEXISTENTE");
+        return;
+    }
+
+    mostrarTexto("mensaje", "Cuenta encontrada. Saldo: " + cuentaActual.saldo);
+
+    document.getElementById("btnDepositar").disabled = false;
+    document.getElementById("btnRetirar").disabled = false;
+}
+
+depositar = function(){
+
+    let monto = recuperarFloat("monto");
+
+    cuentaActual.saldo += monto;
+
+    movimientos.push({
+        cuenta: cuentaActual.numeroCuenta,
+        monto: monto,
+        operacion: "DEPOSITO"
+    });
+
+    mostrarTexto("mensaje", "Depósito realizado");
+}
+
+retirar = function(){
+
+    let monto = recuperarFloat("monto");
+
+    if(cuentaActual.saldo < monto){
+        mostrarTexto("mensaje", "Saldo insuficiente");
+        return;
+    }
+
+    cuentaActual.saldo -= monto;
+
+    movimientos.push({
+        cuenta: cuentaActual.numeroCuenta,
+        monto: monto,
+        operacion: "RETIRO"
+    });
+
+    mostrarTexto("mensaje", "Retiro realizado");
+}
