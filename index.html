@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="utilitarios.js"></script>
+    <script src="banco.js"></script>
+    <title>Banco</title>
+</head>
+
+<body>
+    <h1>Sistema Bancario</h1>
+
+    <h2>Crear Cuenta</h2>
+    <input type="text" id="cedula" placeholder="Cédula">
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="apellido" placeholder="Apellido">
+    <input type="text" id="numeroCuenta" placeholder="Número Cuenta">
+    <button onclick="agregarCuenta()">Agregar</button>
+
+    <hr>
+
+    <h2>Transacciones</h2>
+    <input type="text" id="buscarCuenta" placeholder="Número Cuenta">
+    <button onclick="buscarCuenta()">Buscar</button>
+
+    <input type="number" id="monto" placeholder="Monto">
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="retirar()">Retirar</button>
+
+    <hr>
+
+    <h2>Movimientos</h2>
+    <input type="text" id="verCuenta" placeholder="Número Cuenta">
+    <button onclick="verMovimientos()">Ver Movimientos</button>
+
+    <table border="1" id="tablaMovimientos"></table>
+
+</body>
+</html>
