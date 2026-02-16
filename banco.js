@@ -35,7 +35,15 @@ mostrarCuentas = function(){
     let tabla = document.getElementById("tablaCuentas");
     if(!tabla) return;
 
-    tabla.innerHTML = "";
+    tabla.innerHTML = `
+        <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Número Cuenta</th>
+            <th>Saldo</th>
+        </tr>
+    `;
 
     for(let i = 0; i < cuentas.length; i++){
         tabla.innerHTML += `
@@ -49,6 +57,7 @@ mostrarCuentas = function(){
         `;
     }
 }
+
 
 //======= TRANSACCIONES =======
 
