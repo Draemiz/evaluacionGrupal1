@@ -105,3 +105,29 @@ retirar = function(){
 }
 
 //======= MOVIMIENTOS =======
+
+verMovimientos = function(){
+
+    let numero = recuperarTexto("verCuenta");
+
+    let movimientosCuenta = [];
+
+    for(let i = 0; i < movimientos.length; i++){
+        if(movimientos[i].cuenta === numero){
+            movimientosCuenta.push(movimientos[i]);
+        }
+    }
+
+    let tabla = document.getElementById("tablaMovimientos");
+    tabla.innerHTML = "";
+
+    for(let i = 0; i < movimientosCuenta.length; i++){
+        tabla.innerHTML += `
+            <tr>
+                <td>${movimientosCuenta[i].cuenta}</td>
+                <td>${movimientosCuenta[i].monto}</td>
+                <td>${movimientosCuenta[i].operacion}</td>
+            </tr>
+        `;
+    }
+}
